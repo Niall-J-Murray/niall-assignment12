@@ -50,7 +50,7 @@ CREATE TABLE customer (
 	PRIMARY KEY (customer_id),
 	customer_id INT         NOT NULL AUTO_INCREMENT,
 	full_name   VARCHAR(30) NOT NULL,
-        phone       VARCHAR(20) NOT NULL
+	phone       VARCHAR(20) NOT NULL
 );
 
 INSERT INTO customer (full_name, phone)
@@ -61,7 +61,7 @@ CREATE TABLE customer_order (
 	FOREIGN KEY (order_id)    REFERENCES `order` (order_id),
 	FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
 	order_id    INT NOT NULL,
-        customer_id INT NOT NULL
+    customer_id INT NOT NULL
 );
 
 INSERT INTO customer_order (order_id, customer_id)
