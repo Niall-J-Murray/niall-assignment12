@@ -48,9 +48,9 @@ VALUES (1, 1, 1),
        
 CREATE TABLE customer (
 	PRIMARY KEY (customer_id),
-	customer_id  INT NOT NULL AUTO_INCREMENT,
-	full_name    VARCHAR(30),
-    phone		 VARCHAR(20)
+	customer_id  INT         NOT NULL AUTO_INCREMENT,
+	full_name    VARCHAR(30) NOT NULL,
+    phone		 VARCHAR(20) NOT NULL
 );
 
 INSERT INTO customer (full_name, phone)
