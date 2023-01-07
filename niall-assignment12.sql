@@ -15,7 +15,7 @@ CREATE TABLE pizza (
 
 INSERT INTO pizza (pizza_id, pizza_name, price)
 VALUES (1, 'Pepperoni & Cheese', 7.99),
-	   (2, 'Vegetarian', 9.99),
+       (2, 'Vegetarian', 9.99),
        (3, 'Meat Lovers', 14.99),
        (4, 'Hawaiian', 12.99);
 
@@ -27,7 +27,7 @@ CREATE TABLE `order` (
 
 INSERT INTO `order` (`date`)
 VALUES ('2014-10-09 09:47:00'),
-	   ('2014-10-09 13:20:00'),
+       ('2014-10-09 13:20:00'),
        ('2014-10-09 09:47:00');
 
 CREATE TABLE order_pizza (
@@ -41,16 +41,16 @@ CREATE TABLE order_pizza (
 INSERT INTO order_pizza (`order_id`, `pizza_id`, `quantity`)
 VALUES (1, 1, 1),
        (1, 3, 1),	
-	   (2, 2, 1),
+       (2, 2, 1),
        (2, 3, 2),
        (3, 3, 1),
        (3, 4, 1);
        
 CREATE TABLE customer (
 	PRIMARY KEY (customer_id),
-	customer_id  INT         NOT NULL AUTO_INCREMENT,
-	full_name    VARCHAR(30) NOT NULL,
-    phone		 VARCHAR(20) NOT NULL
+	customer_id INT         NOT NULL AUTO_INCREMENT,
+	full_name   VARCHAR(30) NOT NULL,
+        phone       VARCHAR(20) NOT NULL
 );
 
 INSERT INTO customer (full_name, phone)
@@ -61,12 +61,12 @@ CREATE TABLE customer_order (
 	FOREIGN KEY (order_id)    REFERENCES `order` (order_id),
 	FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
 	order_id    INT NOT NULL,
-    customer_id INT NOT NULL
+        customer_id INT NOT NULL
 );
 
 INSERT INTO customer_order (order_id, customer_id)
 VALUES (1, 1),
-	   (2, 2),
+       (2, 2),
        (3, 1);
        
 -- Q4: Now the restaurant would like to know which customers are spending the most money at their establishment.
